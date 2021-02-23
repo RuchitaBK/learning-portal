@@ -1,3 +1,5 @@
+package com.db.hackathon.learningportal.bean;
+
 import lombok.Data;
 
 @Data

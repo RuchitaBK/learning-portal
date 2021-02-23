@@ -1,4 +1,4 @@
-package com.abk.hs.core.annotations;
+package com.db.hackathon.learningportal.annotations;
 
 
 import java.lang.annotation.ElementType;
