@@ -1,0 +1,32 @@
+package com.db.hackathon.learningportal.rest;
+
+@RestController
+@RequestMapping(path = "/user", produces = {"application/json"})
+public class UserController {
+
+    @Autowired
+    private UserService userService;
+
+    @PostMapping(path = "/login", consumes = "application/json")
+    @ApiOperation("validate user login and return user info ")
+    public ResponseEntity<ServiceResponse> loginUser(@RequestBody LoginRequest loginRequest) {
+
+        return ResponseEntity.ok(userService.validateUser(loginRequest));
+    }
+
+
+    @PostMapping(path = "/add", consumes = "application/json")
+    @ApiOperation("validate user login and return user info ")
+    public ResponseEntity<ServiceResponse> addUser(@RequestBody UserRequest request) {
+
+        return ResponseEntity.ok(userService.addUser(request));
+    }
+
+    @RequestMapping("/info")
+    public String info_msg()
+    {
+        return "Just Check ";
+    }
+
+
+}
